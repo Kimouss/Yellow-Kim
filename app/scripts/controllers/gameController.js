@@ -15,10 +15,10 @@ angular.module('blackJackApp')
 		function initCards() {
 			$scope.robot = {pseudo: 'Mr. Robot'};
 			$scope.cards = {
-				spades: ['as', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king'],
-				hearts: ['as', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king'],
-				clovers: ['as', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king'],
-				tiles: ['as', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king']
+				spades: ['ace', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king'],
+				hearts: ['ace', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king'],
+				clubs: ['ace', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king'],
+				diamonds: ['ace', '2', '3', '4', '5', '6', '7', '8', '9', 'jack', 'queen', 'king']
 			};
 
 			$scope.robot.cards = [robotHit()];
@@ -82,7 +82,7 @@ angular.module('blackJackApp')
 					card.number = 9;
 				}
 
-				if ('as' === card.number) {
+				if ('ace' === card.number) {
 					card.number = 1;
 				}
 
