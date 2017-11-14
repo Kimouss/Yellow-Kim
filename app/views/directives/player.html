@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		{{ player.pseudo }}
+
+		<div class="pull-right">
+			 <button ng-if="!ia" ng-click="remove($event)" type="button" class="btn btn-danger btn-xs">Supprimer</button>
+			 <p>Score: {{ player.score ? player.score : 0 }}</p>
+		</div>
+	</div>
+	<div class="panel-body">
+		<ul ng-show="player.cards">
+			<li ng-repeat="card in player.cards">
+				{{ card.total }}
+			</li>
+		</ul>
+		<div ng-show="!player.cards">
+			Croyez en l'âme des cartes...
+		</div>
+		<p>Total de la main: {{ player.score ? player.score : 0 }}</p>
+	</div>
+	<div class="panel-footer" ng-if="player.pseudo !== 'Mr. Robot'">
+		<button type="button" ng-disabled="!player.hit" ng-click="hit($event)" class="btn btn-primary btn-xs">Piocher</button>
+  		<button type="button" ng-click="stand($event)" class="btn btn-default btn-xs">Se coucher</button>
+	</div>
+</div>
